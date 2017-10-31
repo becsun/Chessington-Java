@@ -1,5 +1,6 @@
 package training.chessington.model;
 
+import java.util.List;
 import java.util.Objects;
 
 public final class Move {
@@ -10,6 +11,7 @@ public final class Move {
         this.from = from;
         this.to = to;
     }
+
 
     public Coordinates getFrom() {
         return from;

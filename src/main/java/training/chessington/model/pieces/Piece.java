@@ -5,7 +5,7 @@ import training.chessington.model.Coordinates;
 import training.chessington.model.Move;
 import training.chessington.model.PlayerColour;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface Piece {
     enum PieceType {
@@ -15,5 +15,5 @@ public interface Piece {
     PieceType getType();
     PlayerColour getColour();
 
-    List<Move> getAllowedMoves(Coordinates from, Board board);
+    ArrayList<Move> getAllowedMoves(Coordinates from, Board board);
 }

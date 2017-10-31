@@ -6,7 +6,6 @@ import training.chessington.model.Move;
 import training.chessington.model.PlayerColour;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Knight extends AbstractPiece {
     public Knight(PlayerColour colour) {
@@ -14,7 +13,7 @@ public class Knight extends AbstractPiece {
     }
 
     @Override
-    public List<Move> getAllowedMoves(Coordinates from, Board board) {
+    public ArrayList<Move> getAllowedMoves(Coordinates from, Board board) {
         return new ArrayList<>();
     }
 }
