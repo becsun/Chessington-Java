@@ -22,4 +22,5 @@ public interface Piece {
     public boolean getHasMoved();
 
     public void setHasMoved();
+
 }

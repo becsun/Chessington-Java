@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import training.chessington.model.Board;
 import training.chessington.model.Game;
+import training.chessington.model.pieces.Knight;
+import training.chessington.model.pieces.Piece;
 import training.chessington.view.ChessApp;
 
 public class Main extends Application {
@@ -21,10 +23,12 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         scene.setRoot(chessBoard);
         primaryStage.show();
+
     }
 
 
     public static void main(String[] args) {
         launch(args);
     }
+
 }
