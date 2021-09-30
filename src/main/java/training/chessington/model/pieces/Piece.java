@@ -15,5 +15,11 @@ public interface Piece {
     PieceType getType();
     PlayerColour getColour();
 
+
+
     ArrayList<Move> getAllowedMoves(Coordinates from, Board board);
+
+    public boolean getHasMoved();
+
+    public void setHasMoved();
 }
