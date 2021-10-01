@@ -14,6 +14,22 @@ public class Rook extends AbstractPiece {
 
     @Override
     public ArrayList<Move> getAllowedMoves(Coordinates from, Board board) {
-        return new ArrayList<>();
+        ArrayList<Move> potentialMoves = new ArrayList<>();
+        ArrayList<Move> movesAllowed = new ArrayList<>();
+
+
+        potentialMoves.add(new Move(from, from.plus(0, -1)));
+        potentialMoves.add(new Move(from, from.plus(0, 1)));
+        potentialMoves.add(new Move(from, from.plus(1, 0)));
+        potentialMoves.add(new Move(from, from.plus(-1, -0)));
+
+        potentialMoves.stream().forEach( move -> {
+            if ( board.isValid(move,this.colour) ){
+                movesAllowed.add(move);
+            }
+        });
+
+
+        return movesAllowed;
     }
 }
