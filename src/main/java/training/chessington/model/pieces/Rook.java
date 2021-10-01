@@ -17,12 +17,24 @@ public class Rook extends AbstractPiece {
         ArrayList<Move> potentialMoves = new ArrayList<>();
         ArrayList<Move> movesAllowed = new ArrayList<>();
 
+        int numberOfSpots = 7;
 
-        potentialMoves.add(new Move(from, from.plus(0, -1)));
-        potentialMoves.add(new Move(from, from.plus(0, 1)));
-        potentialMoves.add(new Move(from, from.plus(1, 0)));
-        potentialMoves.add(new Move(from, from.plus(-1, -0)));
+        for (int i = 0; i<= numberOfSpots; i++){
+            potentialMoves.add(new Move(from, from.rook( 6, i)));
+            for (int j = numberOfSpots; j >0; j--){
+                potentialMoves.add(new Move(from, from.rook(j, i)));
+            }
+        }
 
+        for (int i = 0; i<= 7; i++){
+            potentialMoves.add(new Move(from, from.rook(6-i, i)));
+
+        }
+
+
+
+
+        // if the space is empty
         potentialMoves.stream().forEach( move -> {
             if ( board.isValid(move,this.colour) ){
                 movesAllowed.add(move);
@@ -30,6 +42,6 @@ public class Rook extends AbstractPiece {
         });
 
 
-        return movesAllowed;
+        return potentialMoves;
     }
 }

@@ -41,4 +41,9 @@ public final class Coordinates {
     public Coordinates plus(int rowDiff, int colDiff) {
         return new Coordinates(row + rowDiff, col + colDiff);
     }
+
+    public Coordinates rook(int rowDiff, int colDiff) {
+        return new Coordinates( rowDiff, colDiff);
+    }
+
 }
