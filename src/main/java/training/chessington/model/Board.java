@@ -49,7 +49,13 @@ public class Board {
         board[to.getRow()][to.getCol()].setHasMoved();
     }
 
-
+    public boolean isValid(Move move, PlayerColour playerColor){
+        Coordinates to = move.getTo();
+        if (to.getRow() >= 0 && to.getRow() <= 7 && to.getCol() >= 0 && to.getCol() <= 7){
+            return( this.get(to) == null || this.get(to).getColour() != playerColor);
+        }
+        return false;
+    }
 
     public void placePiece(Coordinates coords, Piece piece) {
         board[coords.getRow()][coords.getCol()] = piece;
